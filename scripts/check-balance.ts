@@ -1,8 +1,9 @@
 import { ethers } from "ethers";
 
 async function main() {
-  const provider = new ethers.JsonRpcProvider("https://api.avax-test.network/ext/bc/C/rpc");
-  const addr = "0xbC9a8149d20370e478bb5BaaE95B7B35F64Aee19";
+  const provider = new ethers.JsonRpcProvider(process.env.FUJI_RPC || "https://api.avax-test.network/ext/bc/C/rpc");
+  const addr = process.env.CHECK_ADDRESS || process.argv[2];
+  if (!addr) { console.error("Usage: set CHECK_ADDRESS env or pass address as arg"); process.exit(1); }
   const balance = await provider.getBalance(addr);
   console.log("Wallet:", addr);
   console.log("Balance:", ethers.formatEther(balance), "AVAX");

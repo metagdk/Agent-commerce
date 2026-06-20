@@ -4,7 +4,7 @@ Write-Host "║  x402 + ERC-8004: Autonomous Agent Payments & Identity      ║"
 Write-Host "╚══════════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
 Write-Host ""
 
-$ROOT = "C:\Users\hi\AppData\Local\Temp\opencode\agent-commerce"
+$ROOT = $PSScriptRoot
 Set-Location $ROOT
 
 Write-Host "Select demo mode:" -ForegroundColor Yellow
@@ -51,15 +51,14 @@ switch ($choice) {
     node x402-server.js
   }
   "5" {
-    Write-Host "`n=== FRONTEND PLAYGROUND ===" -ForegroundColor Green
-    Write-Host "  Open http://localhost:8080 in your browser`n"
-    node serve.js
+    Write-Host "`n=== x402 API SERVER ===" -ForegroundColor Green
+    Write-Host "  http://localhost:4020`n"
+    node x402-server.js
   }
   "6" {
-    Write-Host "`n=== AGENT EXPLORER ===" -ForegroundColor Green
-    Write-Host "  Start the frontend first (option 5), then open:"
-    Write-Host "  http://localhost:8080/explorer.html`n"
-    node serve.js
+    Write-Host "`n=== x402 API SERVER (port 4020) ===" -ForegroundColor Green
+    Write-Host "  Test: curl http://localhost:4020/api/market-data`n"
+    node x402-server.js
   }
   "7" {
     Write-Host "`n=== TALK-TO-DeFi AGENT ===" -ForegroundColor Green
