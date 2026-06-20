@@ -1,0 +1,35 @@
+{
+  "name": "agent-commerce",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.ts",
+    "demo": "hardhat run scripts/demo.ts",
+    "deploy:fuji": "hardhat run scripts/deploy-fuji.ts --network fuji",
+    "demo:fuji": "hardhat run scripts/demo-fuji.ts --network fuji",
+    "agent": "node autonomous-agent.cjs",
+    "agent:lead": "set AGENT_MODE=lead && node autonomous-agent.cjs",
+    "agent:spec": "set AGENT_MODE=specialist && node autonomous-agent.cjs",
+    "agent:both": "set AGENT_MODE=both && node autonomous-agent.cjs",
+    "x402": "node x402-server.js",
+    "serve": "node serve.js",
+    "talk": "node talk-to-defi.cjs",
+    "orchestrate": "node multi-agent-orchestrator.cjs",
+    "x402:demo": "node x402-server.js & timeout /t 3 & node autonomous-agent.cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/contracts": "^5.6.1",
+    "@types/node": "^25.9.3",
+    "dotenv": "^17.4.2",
+    "hardhat": "^2.28.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}

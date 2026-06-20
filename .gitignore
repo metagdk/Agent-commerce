@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Environment variables (contains private keys and RPC URLs)
+.env
+
+# Hardhat artifacts
+artifacts/
+cache/
+typechain-types/
+
+# Build output
+dist/
+out/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
