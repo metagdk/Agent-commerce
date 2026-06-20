@@ -14,7 +14,6 @@
     "agent:spec": "set AGENT_MODE=specialist && node autonomous-agent.cjs",
     "agent:both": "set AGENT_MODE=both && node autonomous-agent.cjs",
     "x402": "node x402-server.js",
-    "serve": "node serve.js",
     "talk": "node talk-to-defi.cjs",
     "orchestrate": "node multi-agent-orchestrator.cjs",
     "x402:demo": "node x402-server.js & timeout /t 3 & node autonomous-agent.cjs"
