@@ -1,5 +1,5 @@
 const { ethers } = require("ethers");
-const https = require("http");
+const http = require("http");
 try { require("dotenv").config(); } catch {}
 
 // ── Config ──
@@ -369,7 +369,7 @@ class AutonomousAgent {
       const opts = { hostname: url.hostname, port: url.port, path: url.pathname + url.search, method: "GET" };
       if (paymentInfo?.txHash) opts.headers = { "X-Payment-Tx": paymentInfo.txHash, "X-Resource-Id": paymentInfo.resourceId };
 
-      const req = https.request(opts, (res) => {
+      const req = http.request(opts, (res) => {
         let data = "";
         res.on("data", c => data += c);
         res.on("end", () => {
